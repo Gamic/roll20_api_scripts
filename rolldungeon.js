@@ -10,8 +10,8 @@ const BigOccupants = ['Dangerour Outlaw','Elemental Lord','Vampire','Lich','Demo
 const SmallerOccupants = ['Thieves','Goblins','Zombies','Skeletons','Bats','Rats','Spiders','Oozes','Kobolds','Cultists','Troglodytes','Ogres'];
 const Mechanics = ['Gauntlet of mechanical traps','powerful magical wards','golem guardians','elemental guardians','noxious gas','tocis mold','horrible curse','unstable ceilings','flooding chambers','sink holes','steam vents and lava flows','slippery footing'];
 const Rewards = ['Weapon','Wand','Spellbook','Treasure Stash','Hoard','Artifacts','Relics','Chests of Silver','Crown Jewels','Large Diamond']
-
-const randomZeroBasedInt = max => randomInteger(max) - 1;
+const minusOne = x => x - 1;
+const randomZeroBasedInt = _.compose(minusOne, randomInteger);
 const randomFromList = list => list[randomZeroBasedInt(list.length)];
 const rolls = () => { 
     return {
